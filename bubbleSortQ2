@@ -1,0 +1,28 @@
+import random
+
+array = [[0 for i in range(10)]for j in range(10)]
+
+#array = [-1 for i in range(10)]
+
+for i in range(10):
+    for j in range(10):
+        array[i][j] = random.randint(0,100)
+
+arrayLength = 10
+
+for x in range(arrayLength):
+    for y in range(arrayLength-1):
+        for z in range(arrayLength-y-1):
+            if array[x][z] > array[x][z+1]:
+                temp = array[x][z]
+                array[x][z] = array[x][z+1]
+                array[x][z+1]=temp
+
+
+for i in range(arrayLength):
+    for j in range(arrayLength):
+        print(array[i][j], end = "  ")
+    print()
+
+#name = "Rochan"
+#print(f"My name is {name}")
